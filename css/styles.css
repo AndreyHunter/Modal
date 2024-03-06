@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    overflow-x: hidden;
+    font-family: "Montserrat", sans-serif;
+    background: #232526;
+    background: -webkit-linear-gradient(to right, #414345, #232526);  
+    background: linear-gradient(to right, #414345, #232526); 
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p,
+strong {
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin-inline: auto;
+    padding-top: 20px;
+}
+
+.title {
+    font-size: 5em;
+    text-align: center;
+    color: white;
+}
+
+#modalBtn {
+    width: 250px;
+    min-height: 65px;
+    background-color: #002765;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.125em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+    margin-bottom: 10px;
+}
+
+#modalBtn:hover {
+    background-color: #03204e;
+}
+
+#modalBtn:active {
+    transform: translateY(.6px);
+}
+
+.desc {
+    font-size: 1.125em;
+    font-weight: 500;
+    color: white;
+}
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    transition: .3s ease-in-out;
+}
+
+.modal__wrapper {
+    transform: scale(0);
+    width: 700px;
+    min-height: 400px;
+    padding: 20px;
+    background-color: white;
+    border: 20px solid black;
+    border-radius: 5px;
+    position: relative;
+    transition: .3s ease-in-out;
+}
+
+.modal__closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    opacity: .7;
+    cursor: pointer;
+    z-index: 4;
+    transition: .1s ease-in-out;
+}
+
+.modal__closeBtn:hover {
+    opacity: 1;
+}
+
+.modal__head {
+    position: relative;
+    z-index: 2;
+}
+
+.modal__title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.modal__desc {
+    font-size: 1.125em;
+    line-height: 140%;
+    margin-bottom: 10px;
+}
+
+.modal__body {
+    position: relative;
+    z-index: 3;
+}
+
+.modal__image {
+    border-radius: 5px;
+}
+
+.tv-glow {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.2) 100%);
+    animation: glow 4s ease-in-out infinite alternate;
+    opacity: 0.3; 
+  }
+
+  @keyframes glow {
+    from {
+        box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.4);
+    }
+    to {
+        box-shadow: 0 0 20px 10px rgba(255, 255, 255, .9);
+    }
+}
+
+.modal-hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-show-scale {
+    transform: scale(1);
+}
